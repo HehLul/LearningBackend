@@ -24,3 +24,11 @@ res.end();
 });
 
 place this at the END of all routes
+
+ROUTERS: https://www.theodinproject.com/lessons/nodejs-routes#assignment
+
+assignment: integrate routers to create a basic library backend app.
+
+CONTROLLERS: https://www.theodinproject.com/lessons/nodejs-controllers
+
+VIEWS: https://www.theodinproject.com/lessons/nodejs-views
