@@ -2,11 +2,11 @@
   <head></head>
   <body>
     <h1>New Message Form</h1>
-    <form action="POST" action="/new">
+    <form method="POST" action="/new">
       <label for="userName">Enter Username</label>
-      <input type="text" />
+      <input type="text" name="userName" />
       <label for="userText">Enter Message</label>
-      <input type="text" />
+      <input type="text" name="userText" />
       <button type="submit">Submit</button>
     </form>
   </body>

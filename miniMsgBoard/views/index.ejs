@@ -6,6 +6,7 @@
         <h1><%= title %></h1>
         <div>
             <h2>All Messages</h2>
+            <a href="/new">Create New Message</a>
             <div>
                 <% for(i=0; i<messages.length; i++){ %>
                     <p>By user: <%= messages[i].user %></p>
