@@ -7,6 +7,7 @@ The following list is the order in which I have implemented and practiced the Ba
 2. BasicInfoSite (implemented express basics)
 3. expressIntro
 4. miniMsgBoard
+5. forms
 
 Necessary dependencies to install when working with Backend:
 
