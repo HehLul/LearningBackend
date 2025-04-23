@@ -100,5 +100,16 @@ exports.usersDeletePost = (req, res) => {
 };
 
 exports.usersSearchGet = (req, res) => {
-  res.redirect("/");
+  //get acctual seaerch query
+  const query = req.query.search;
+  // if query not valid, redirect + show error
+  //else, use the storage get method to find query
+  const users = usersStorage.getUsers();
+  users.forEach((curruser) => {
+    if (curruser.firstName == query) {
+      return res
+        .status(200)
+        .render("index", { title: "Search Result", user: curruser });
+    }
+  });
 };
