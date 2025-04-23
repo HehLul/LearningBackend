@@ -14,3 +14,4 @@ Necessary dependencies to install when working with Backend:
 - express
 - express-async-handler (for controllers)
 - ejs
+- express-validation (for forms validator to use bod() and validationResult())
