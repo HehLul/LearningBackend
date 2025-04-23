@@ -18,6 +18,18 @@ const validateUser = [
     .withMessage(`Last name ${alphaErr}`)
     .isLength({ min: 1, max: 10 })
     .withMessage(`Last name ${lengthErr}`),
+  body("email", "Email must be valid.")
+    .isEmail()
+    .withMessage("Email is required.")
+    .optional({ values: "falsy" })
+    .withMessage("Email is not valid."),
+
+  body("age")
+    .isNumeric()
+    .isInt({ min: 16, max: 99 })
+    .withMessage("Age is out of range")
+    .optional(),
+  body("bio").isString(),
 ];
 
 exports.usersListGet = (req, res) => {
@@ -43,8 +55,8 @@ exports.usersCreatePost = [
         errors: errors.array(),
       });
     }
-    const { firstName, lastName } = req.body;
-    usersStorage.addUser({ firstName, lastName });
+    const { firstName, lastName, email, age, bio } = req.body;
+    usersStorage.addUser({ firstName, lastName, email, age, bio });
     res.redirect("/");
   },
 ];
@@ -69,8 +81,14 @@ exports.usersUpdatePost = [
         errors: errors.array(),
       });
     }
-    const { firstName, lastName } = req.body;
-    usersStorage.updateUser(req.params.id, { firstName, lastName });
+    const { firstName, lastName, email, age, bio } = req.body;
+    usersStorage.updateUser(req.params.id, {
+      firstName,
+      lastName,
+      email,
+      age,
+      bio,
+    });
     res.redirect("/");
   },
 ];
