@@ -8,6 +8,7 @@ The following list is the order in which I have implemented and practiced the Ba
 3. expressIntro
 4. miniMsgBoard
 5. forms
+6. dbintro
 
 Necessary dependencies to install when working with Backend:
 
